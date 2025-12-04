@@ -125,7 +125,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = ['PyTorch', 'TensorFlow', 'Python', 'Diffusion Models', 'Docker', 'C++'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,33 +135,30 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              Hello! My name is Vincenzo and I'm passionate about developing AI systems that make a
+              real-world impact. My journey started with electronics engineering and evolved into
+              machine learning and computer vision, with a special focus on medical imaging
+              applications.
             </p>
 
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
+              Fast-forward to today, and I've had the privilege of working at{' '}
+              <a href="https://www.amazon.science/">Amazon</a> as an Applied Scientist,{' '}
+              <a href="https://www.sheffield.ac.uk/kroto">The University of Sheffield</a> as a
+              Research Scientist, and contributing to autonomous vehicle projects at{' '}
+              <a href="http://www.h2polito.it/">H2politO</a>. Currently, I'm pursuing my PhD at{' '}
+              <a href="https://www.eurecom.fr/">EURECOM</a> and{' '}
+              <a href="https://www.kcl.ac.uk/">King's College London</a>, where I develop foundation
+              models and quality control systems for medical image segmentation.
             </p>
 
             <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
-              </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
+              My research has been published in top-tier conferences like MICCAI and IEEE journals,
+              with a focus on diffusion models, multimodal learning, and interpretable AI for
+              healthcare.
             </p>
 
-            <p>Here are a few technologies I’ve been working with recently:</p>
+            <p>Here are a few technologies I've been working with recently:</p>
           </div>
 
           <ul className="skills-list">

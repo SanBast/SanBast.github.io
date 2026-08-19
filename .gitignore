@@ -1,11 +1,12 @@
-# Project dependencies
-.cache
-node_modules
-yarn-error.log
-package-lock.json
-
-# Build directory
-/public
+node_modules/
+dist/
+*.tsbuildinfo
 .DS_Store
+npm-debug.log*
 
-.vscode/
+# Manuscripts under review
+/11416_Retrieval_Augmented_Corr.pdf
+/3175_MID_Mask_Image_Distributi.pdf
+
+# Local source document; the public copy lives in public/
+/MarcianoVincenzo_cv.pdf

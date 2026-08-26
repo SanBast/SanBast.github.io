@@ -103,7 +103,8 @@ const education = [
     period: '2023 to 2026',
     title: 'PhD in AI and Computer Science',
     institution: 'Sorbonne University',
-    detail: 'Research in medical imaging, multimodal learning, and reliable AI systems.',
+    detail:
+      'Research in medical imaging, multimodal learning, and reliable AI systems. Defense: September 2026.',
   },
   {
     period: '2023 to 2026',
@@ -613,12 +614,29 @@ const App = () => {
             <h2>Contact.</h2>
             <p>
               For research discussions, collaborations, or questions about the work shown here,
-              feel free to reach me by email.
+              feel free to reach me by email or find me on these platforms.
             </p>
             <a className="button button-light" href="mailto:marcianovincenzomv@gmail.com">
               Email me
               <ArrowRight size={19} aria-hidden="true" />
             </a>
+            <div className="contact-links">
+              <a href="https://github.com/SanBast" target="_blank" rel="noreferrer">
+                <Github size={17} aria-hidden="true" />
+                GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/mrcvcn/" target="_blank" rel="noreferrer">
+                <Linkedin size={17} aria-hidden="true" />
+                LinkedIn
+              </a>
+              <a
+                href="https://scholar.google.com/citations?user=Ga_uQ98AAAAJ"
+                target="_blank"
+                rel="noreferrer">
+                <FileText size={17} aria-hidden="true" />
+                Google Scholar
+              </a>
+            </div>
           </div>
         </section>
       </main>

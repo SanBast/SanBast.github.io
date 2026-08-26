@@ -272,6 +272,13 @@ const App = () => {
                   </div>
                 </dl>
                 <div className="case-links">
+                  <a
+                    href="https://robustml-eurecom.github.io/nnQC/"
+                    target="_blank"
+                    rel="noreferrer">
+                    <ArrowUpRight size={17} aria-hidden="true" />
+                    Project page and demo
+                  </a>
                   <a href="https://arxiv.org/abs/2511.09588" target="_blank" rel="noreferrer">
                     <FileText size={17} aria-hidden="true" />
                     Paper

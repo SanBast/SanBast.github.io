@@ -5,6 +5,9 @@ import teaserGrace from './assets/teaser-grace.jpg';
 import teaserHypermm from './assets/teaser-hypermm.jpg';
 import teaserMid from './assets/teaser-mid.jpg';
 import teaserNnqc from './assets/teaser-nnqc.jpg';
+import teaserSensors from './assets/teaser-sensors.jpg';
+import teaserVascular from './assets/teaser-vascular.jpg';
+import teaserVesselverse from './assets/teaser-vesselverse.jpg';
 
 const EMAIL = 'marcianovincenzomv@gmail.com';
 const CV_URL = '/Vincenzo-Marciano-CV.pdf';
@@ -138,7 +141,9 @@ const publications: Pub[] = [
     venue: 'Medical Image Computing and Computer Assisted Intervention (MICCAI)',
     year: 2026,
     kind: 'inproceedings',
+    teaser: teaserVascular,
     paper: 'https://www.eurecom.fr/fr/publication/8765',
+    code: 'https://github.com/erc-caravel/Vascular-Graph-Extraction',
   },
   {
     key: 'Marciano2026GRACE',
@@ -167,6 +172,8 @@ const publications: Pub[] = [
     venue: 'Medical Image Computing and Computer Assisted Intervention (MICCAI)',
     year: 2025,
     kind: 'inproceedings',
+    teaser: teaserVesselverse,
+    project: 'https://i-vesseg.github.io/vesselverse/',
     code: 'https://github.com/robustml-eurecom/VesselVerse-Framework',
   },
   {
@@ -221,6 +228,7 @@ const publications: Pub[] = [
     venue: 'IEEE Sensors Journal',
     year: 2024,
     kind: 'article',
+    teaser: teaserSensors,
     paper: 'https://ieeexplore.ieee.org/abstract/document/10753431',
   },
 ];

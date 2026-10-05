@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ChevronUp, Code, FileText, Github, GraduationCap, Globe, Linkedin, Mail, Quote } from 'lucide-react';
 import teaserBreast from './assets/teaser-breast.jpg';
+import teaserCondition from './assets/teaser-condition.jpg';
 import teaserGrace from './assets/teaser-grace.jpg';
 import teaserHypermm from './assets/teaser-hypermm.jpg';
 import teaserMid from './assets/teaser-mid.jpg';
@@ -163,6 +164,7 @@ const publications: Pub[] = [
     venue: 'Preprint',
     year: 2026,
     kind: 'misc',
+    teaser: teaserCondition,
   },
   {
     key: 'Falcetta2025VesselVerse',

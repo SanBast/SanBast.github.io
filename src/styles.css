@@ -81,8 +81,8 @@ h3 {
 
 .profile {
   flex: none;
-  width: 210px;
-  height: 210px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid var(--bg-color);

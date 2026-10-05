@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { ChevronUp, Code, FileText, Github, GraduationCap, Globe, Linkedin, Mail, Quote } from 'lucide-react';
-import nnqcTeaser from './assets/nnqc-teaser.jpg';
+import teaserBreast from './assets/teaser-breast.jpg';
+import teaserGrace from './assets/teaser-grace.jpg';
+import teaserHypermm from './assets/teaser-hypermm.jpg';
+import teaserMid from './assets/teaser-mid.jpg';
+import teaserNnqc from './assets/teaser-nnqc.jpg';
 
 const EMAIL = 'marcianovincenzomv@gmail.com';
 const CV_URL = '/Vincenzo-Marciano-CV.pdf';
@@ -75,7 +79,7 @@ const news: NewsItem[] = [
   },
   {
     date: 'Sep 2022',
-    text: 'I joined Amazon Supply Chain Optimization in Barcelona as an Applied Scientist I Intern.',
+    text: 'I joined Amazon Transportation Services (ATS) in Barcelona as an Applied Scientist I Intern.',
   },
 ];
 
@@ -103,6 +107,7 @@ const publications: Pub[] = [
     venue: 'Conference on Neural Information Processing Systems (NeurIPS)',
     year: 2026,
     kind: 'inproceedings',
+    teaser: teaserMid,
   },
   {
     key: 'Marciano2026nnQC',
@@ -120,7 +125,7 @@ const publications: Pub[] = [
     venue: 'IEEE Transactions on Medical Imaging (TMI)',
     year: 2026,
     kind: 'article',
-    teaser: nnqcTeaser,
+    teaser: teaserNnqc,
     paper: 'https://arxiv.org/abs/2511.09588',
     project: 'https://robustml-eurecom.github.io/nnQC/',
     code: 'https://github.com/robustml-eurecom/nnQC',
@@ -141,6 +146,16 @@ const publications: Pub[] = [
     title: 'Retrieval-Augmented Correction for Generalist Medical Image Segmentation',
     authors: [ME, 'X. Zhang', 'M. Antonelli', 'S. Ourselin', 'M. A. Zuluaga'],
     venue: 'Under review at Transactions on Machine Learning Research (TMLR)',
+    year: 2026,
+    kind: 'misc',
+    teaser: teaserGrace,
+  },
+  {
+    key: 'Viglino2026Condition',
+    short: 'Missing modalities',
+    title: "Condition, Don't Impute: Missing-Aware Conditioning for Incomplete Multimodal Healthcare Data",
+    authors: ['M. Viglino', 'N. V. Barrera', 'H. Chaptoukaev', 'M. A. Zuluaga', ME],
+    venue: 'Preprint',
     year: 2026,
     kind: 'misc',
   },
@@ -172,6 +187,7 @@ const publications: Pub[] = [
     year: 2025,
     kind: 'inproceedings',
     award: 'Best Paper Award',
+    teaser: teaserBreast,
     paper: 'https://hal.science/hal-05251649v1/file/publi-8347.pdf',
   },
   {
@@ -183,6 +199,7 @@ const publications: Pub[] = [
     year: 2024,
     kind: 'inproceedings',
     award: 'Best Presentation Award',
+    teaser: teaserHypermm,
     paper: 'https://arxiv.org/abs/2407.20768',
     code: 'https://github.com/robustml-eurecom/hyperMM',
   },
@@ -304,8 +321,8 @@ const App = () => {
               and <a href="https://www.kcl.ac.uk/people/michela-antonelli">Dr. Michela Antonelli</a> at{' '}
               <a href="https://www.kcl.ac.uk/">King's College London</a>, with funding from{' '}
               <a href="https://3ia.univ-cotedazur.eu/">3IA Côte d'Azur</a>. Before that, I studied at{' '}
-              <a href="https://www.polito.it/">Politecnico di Torino</a>, and worked at Amazon Supply Chain
-              Optimization in Barcelona, the University of Sheffield, <a href="https://www.lexsa.ai/">LexSA</a> and{' '}
+              <a href="https://www.polito.it/">Politecnico di Torino</a>, and worked at Amazon Transportation
+              Services (ATS) in Barcelona, the University of Sheffield, <a href="https://www.lexsa.ai/">LexSA</a> and{' '}
               <a href="https://soundberry.ai/en">SoundBerry</a>.
             </p>
             <p>
@@ -337,8 +354,7 @@ const App = () => {
       <main className="container">
         <section>
           <h3>News</h3>
-          <div className="news-scrollable">
-            <table>
+          <table className="news">
               <tbody>
                 {news.map((item, i) => (
                   <tr key={i}>
@@ -347,8 +363,7 @@ const App = () => {
                   </tr>
                 ))}
               </tbody>
-            </table>
-          </div>
+          </table>
         </section>
 
         <section>

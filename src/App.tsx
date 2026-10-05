@@ -23,8 +23,11 @@ const news: NewsItem[] = [
     text: (
       <>
         I successfully defended my PhD thesis, <em>Representation Learning for Medical Image Segmentation
-        Quality</em>, at Sorbonne Université / EURECOM. Many thanks to my jury: Wenjia Bai, Aasa Feragen, Bernhard
-        Kainz and Enzo Ferrante.
+        Quality</em>, at Sorbonne Université / EURECOM. Many thanks to my jury:{' '}
+        <a href="https://www.imperial.ac.uk/people/w.bai">Wenjia Bai</a>,{' '}
+        <a href="https://people.compute.dtu.dk/afhar/">Aasa Feragen</a>,{' '}
+        <a href="https://bernhard-kainz.com/">Bernhard Kainz</a> and{' '}
+        <a href="https://eferrante.github.io/">Enzo Ferrante</a>.
       </>
     ),
   },
@@ -34,6 +37,15 @@ const news: NewsItem[] = [
       <>
         <b>MID</b>, our reference-free metric for evaluating medical image segmentation, was accepted at{' '}
         <a href="https://neurips.cc">NeurIPS 2026</a>!
+      </>
+    ),
+  },
+  {
+    date: 'Jul 2026',
+    text: (
+      <>
+        <a href="https://robustml-eurecom.github.io/nnQC/">nnQC</a>, our diffusion-based quality control framework
+        for medical image segmentation, was accepted at IEEE Transactions on Medical Imaging (TMI)!
       </>
     ),
   },
@@ -48,12 +60,7 @@ const news: NewsItem[] = [
   },
   {
     date: '2026',
-    text: (
-      <>
-        <a href="https://robustml-eurecom.github.io/nnQC/">nnQC</a> was published in IEEE Transactions on Medical
-        Imaging, and our paper on biological pretraining for vascular graph extraction was accepted at MICCAI 2026.
-      </>
-    ),
+    text: 'Our paper on biological pretraining for vascular graph extraction was accepted at MICCAI 2026.',
   },
   {
     date: 'Jan 2026',

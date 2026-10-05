@@ -59,8 +59,22 @@ const news: NewsItem[] = [
     ),
   },
   {
-    date: '2026',
-    text: 'Our paper on biological pretraining for vascular graph extraction was accepted at MICCAI 2026.',
+    date: 'May 2026',
+    text: (
+      <>
+        Our paper on biological pretraining for vascular graph extraction was accepted at MICCAI 2026. Check out
+        the <a href="https://github.com/erc-caravel/Vascular-Graph-Extraction">code</a>.
+      </>
+    ),
+  },
+  {
+    date: 'Feb 2026',
+    text: (
+      <>
+        My second talk at the World AI Cannes Festival (WAICF 2026), again on AI for quality control in
+        medical imaging.
+      </>
+    ),
   },
   {
     date: 'Jan 2026',
@@ -72,12 +86,29 @@ const news: NewsItem[] = [
     ),
   },
   {
+    date: 'Oct 2025',
+    text: "Public demo of our AI research for medical imaging at the Fête de la Science in Antibes.",
+  },
+  {
     date: 'Sep 2025',
     text: 'Our work on divergence-aware training for breast tumor segmentation received the Best Paper Award at the Deep Breast Workshop, MICCAI 2025.',
   },
   {
+    date: 'Feb 2025',
+    text: (
+      <>
+        My first talk at the World AI Cannes Festival (WAICF 2025), on AI for quality control in medical
+        imaging.
+      </>
+    ),
+  },
+  {
     date: 'Oct 2024',
     text: 'HyperMM received the Best Presentation Award at the MMMI Workshop, MICCAI 2024.',
+  },
+  {
+    date: 'Mar 2024',
+    text: 'Our paper on discriminating indoor and outdoor environments from magnetic field data was accepted at IEEE Sensors Journal.',
   },
   {
     date: 'Sep 2023',
@@ -87,6 +118,10 @@ const news: NewsItem[] = [
         <a href="https://3ia.univ-cotedazur.eu/">3IA Côte d'Azur</a>, jointly with King's College London.
       </>
     ),
+  },
+  {
+    date: 'Dec 2022',
+    text: 'I obtained my MSc in Data Science and Engineering from Politecnico di Torino.',
   },
   {
     date: 'Sep 2022',

@@ -52,7 +52,7 @@ const news: NewsItem[] = [
     date: 'Sep 2026',
     text: (
       <>
-        <b>MID</b>, our reference-free metric for evaluating medical image segmentation, was accepted at{' '}
+        <a href="https://arxiv.org/abs/2610.17354">MID</a>, our reference-free metric for evaluating medical image segmentation, was accepted at{' '}
         <a href="https://neurips.cc">NeurIPS 2026</a>!
       </>
     ),
@@ -171,6 +171,8 @@ const publications: Pub[] = [
     year: 2026,
     kind: 'inproceedings',
     teaser: teaserMid,
+    paper: 'https://arxiv.org/abs/2610.17354',
+    code: 'https://github.com/erc-caravel/pytorch-mid',
   },
   {
     key: 'Marciano2026nnQC',

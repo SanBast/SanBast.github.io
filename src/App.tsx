@@ -9,11 +9,28 @@ import teaserNnqc from './assets/teaser-nnqc.jpg';
 import teaserSensors from './assets/teaser-sensors.jpg';
 import teaserVascular from './assets/teaser-vascular.jpg';
 import teaserVesselverse from './assets/teaser-vesselverse.jpg';
+import logoAlexa from './assets/logos/alexa.svg';
+import logoAmazon from './assets/logos/amazon.svg';
+import logoEurecom from './assets/logos/eurecom.svg';
+import logoKcl from './assets/logos/kcl.svg';
+import logoPolito from './assets/logos/polito.svg';
+import logoSheffield from './assets/logos/sheffield.svg';
+import logoSorbonne from './assets/logos/sorbonne.svg';
 
 const EMAIL = 'marcianovincenzomv@gmail.com';
 const CV_URL = '/Vincenzo-Marciano-CV.pdf';
 const SCHOLAR = 'https://scholar.google.com/citations?user=Ga_uQ98AAAAJ';
 const ME = 'V. Marcianò';
+
+const logos: { name: string; src: string; height?: number }[] = [
+  { name: 'Politecnico di Torino', src: logoPolito },
+  { name: 'Amazon', src: logoAmazon, height: 44 },
+  { name: 'University of Sheffield', src: logoSheffield },
+  { name: 'EURECOM', src: logoEurecom },
+  { name: 'Sorbonne Université', src: logoSorbonne },
+  { name: "King's College London", src: logoKcl },
+  { name: 'Amazon Alexa', src: logoAlexa, height: 48 },
+];
 
 type NewsItem = { date: string; text: React.ReactNode };
 
@@ -404,6 +421,25 @@ const App = () => {
       </div>
 
       <main className="container">
+        <div className="logo-strip" role="list" aria-label="Places I have studied and worked">
+          <div className="logo-track">
+            {[...logos, ...logos].map((logo, i) => {
+              const dup = i >= logos.length;
+              return (
+                <img
+                  key={i}
+                  className={dup ? 'logo logo-dup' : 'logo'}
+                  src={logo.src}
+                  alt={dup ? '' : logo.name}
+                  title={logo.name}
+                  style={logo.height ? { height: logo.height } : undefined}
+                  role={dup ? 'presentation' : 'listitem'}
+                />
+              );
+            })}
+          </div>
+        </div>
+
         <section>
           <h3>News</h3>
           <table className="news">

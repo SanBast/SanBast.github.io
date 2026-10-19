@@ -166,7 +166,7 @@ const publications: Pub[] = [
     key: 'Marciano2026MID',
     short: 'MID',
     title: 'MID: Mask-Image Distributional Divergence for Evaluating Medical Image Segmentation',
-    authors: [ME, 'X. Zhang', 'M. Antonelli', 'S. Ourselin', 'M. A. Zuluaga'],
+    authors: [ME, 'X. Zhang', 'G. Guglielmo', 'M. Antonelli', 'S. Ourselin', 'M. A. Zuluaga'],
     venue: 'Conference on Neural Information Processing Systems (NeurIPS)',
     year: 2026,
     kind: 'inproceedings',

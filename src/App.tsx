@@ -9,6 +9,7 @@ import teaserNnqc from './assets/teaser-nnqc.jpg';
 import teaserSensors from './assets/teaser-sensors.jpg';
 import teaserVascular from './assets/teaser-vascular.jpg';
 import teaserVesselverse from './assets/teaser-vesselverse.jpg';
+import { MAP_HEIGHT, MAP_WIDTH, mapCities, mapCountries } from './mapData';
 import logoAlexa from './assets/logos/alexa.svg';
 import logoAmazon from './assets/logos/amazon.svg';
 import logoEurecom from './assets/logos/eurecom.svg';
@@ -428,23 +429,45 @@ const App = () => {
       </div>
 
       <main className="container">
-        <div className="logo-strip" role="list" aria-label="Places I have studied and worked">
-          <div className="logo-track">
-            {[...logos, ...logos].map((logo, i) => {
-              const dup = i >= logos.length;
-              return (
-                <img
-                  key={i}
-                  className={dup ? 'logo logo-dup' : 'logo'}
-                  src={logo.src}
-                  alt={dup ? '' : logo.name}
-                  title={logo.name}
-                  style={logo.height ? { height: logo.height } : undefined}
-                  role={dup ? 'presentation' : 'listitem'}
-                />
-              );
-            })}
+        <div className="highlights">
+          <div className="logo-strip" role="list" aria-label="Places I have studied and worked">
+            <div className="logo-track">
+              {[...logos, ...logos].map((logo, i) => {
+                const dup = i >= logos.length;
+                return (
+                  <img
+                    key={i}
+                    className={dup ? 'logo logo-dup' : 'logo'}
+                    src={logo.src}
+                    alt={dup ? '' : logo.name}
+                    title={logo.name}
+                    style={logo.height ? { height: logo.height } : undefined}
+                    role={dup ? 'presentation' : 'listitem'}
+                  />
+                );
+              })}
+            </div>
           </div>
+
+          <figure className="travel-map">
+            <svg viewBox={`0 0 ${MAP_WIDTH} ${MAP_HEIGHT}`} role="img" aria-labelledby="travel-map-caption">
+              {mapCountries.map((c) => (
+                <path key={c.name} d={c.d} className={c.visited ? 'country visited' : 'country'}>
+                  <title>{c.name}</title>
+                </path>
+              ))}
+              {mapCities.map((c) => (
+                <g key={c.name} className="city">
+                  <title>{`${c.name}: ${c.places}`}</title>
+                  <circle cx={c.x} cy={c.y} r={4} />
+                  <text x={c.x + 7} y={c.y + 4}>
+                    {c.name}
+                  </text>
+                </g>
+              ))}
+            </svg>
+            <figcaption id="travel-map-caption">Where I have studied and worked</figcaption>
+          </figure>
         </div>
 
         <section>

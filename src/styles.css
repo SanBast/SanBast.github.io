@@ -145,8 +145,16 @@ main section {
 
 /* logo carousel */
 
-.logo-strip {
+.highlights {
+  display: flex;
+  align-items: center;
+  gap: 32px;
   margin-top: 40px;
+}
+
+.logo-strip {
+  flex: 1;
+  min-width: 0;
   overflow: hidden;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
@@ -190,6 +198,55 @@ main section {
   .logo-dup {
     display: none;
   }
+}
+
+/* travel map */
+
+.travel-map {
+  flex: none;
+  width: 300px;
+  margin: 0;
+}
+
+.travel-map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  background: #eef4fb;
+}
+
+.country {
+  fill: #e9ecef;
+  stroke: #fff;
+  stroke-width: 0.6;
+}
+
+.country.visited {
+  fill: #9ec5fe;
+}
+
+.city circle {
+  fill: var(--link-color);
+  stroke: #fff;
+  stroke-width: 1.5;
+}
+
+.city text {
+  fill: var(--text-color);
+  font-size: 13px;
+  font-weight: 700;
+  paint-order: stroke;
+  stroke: #fff;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.travel-map figcaption {
+  margin-top: 6px;
+  color: var(--muted-color);
+  font-size: 14px;
+  text-align: center;
 }
 
 /* publications */
@@ -310,6 +367,19 @@ main section {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+}
+
+@media (max-width: 768px) {
+  .highlights {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .travel-map {
+    width: 100%;
+    max-width: 340px;
+    align-self: center;
+  }
 }
 
 @media (max-width: 576px) {

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ChevronUp, Code, FileText, Github, GraduationCap, Globe, Linkedin, Mail, Quote } from 'lucide-react';
 import teaserBreast from './assets/teaser-breast.jpg';
 import teaserCondition from './assets/teaser-condition.jpg';
@@ -23,15 +23,140 @@ const CV_URL = '/Vincenzo-Marciano-CV.pdf';
 const SCHOLAR = 'https://scholar.google.com/citations?user=Ga_uQ98AAAAJ';
 const ME = 'V. Marcianò';
 
-const logos: { name: string; src: string; height?: number }[] = [
-  { name: 'Politecnico di Torino', src: logoPolito, height: 72 },
-  { name: 'Amazon', src: logoAmazon, height: 44 },
-  { name: 'University of Sheffield', src: logoSheffield, height: 72 },
-  { name: 'EURECOM', src: logoEurecom },
-  { name: 'Sorbonne Université', src: logoSorbonne },
-  { name: "King's College London", src: logoKcl },
-  { name: 'Amazon Alexa', src: logoAlexa, height: 48 },
+const logos: { name: string; src: string; city: string; height?: number }[] = [
+  { name: 'Politecnico di Torino', src: logoPolito, city: 'Torino', height: 72 },
+  { name: 'Amazon', src: logoAmazon, city: 'Barcelona', height: 44 },
+  { name: 'University of Sheffield', src: logoSheffield, city: 'Sheffield', height: 72 },
+  { name: 'EURECOM', src: logoEurecom, city: 'Sophia Antipolis' },
+  { name: 'Sorbonne Université', src: logoSorbonne, city: 'Paris' },
+  { name: "King's College London", src: logoKcl, city: 'London' },
+  { name: 'Amazon Alexa', src: logoAlexa, city: 'Torino', height: 48 },
 ];
+
+const CAROUSEL_SPEED = 0.04; // px per ms
+
+// Offset (px) that centres the logos of `city` in the strip. The track holds the logos twice, so pick the
+// shortest run of consecutive logos covering all of that city's logos, which handles the wrap-around.
+function cityOffset(city: string, track: HTMLElement, strip: HTMLElement) {
+  const n = logos.length;
+  const wanted = new Set(logos.filter((l) => l.city === city).map((l) => l.name));
+  let best: [number, number] | null = null;
+  for (let i = 0; i < n; i++) {
+    if (!wanted.has(logos[i].name)) continue;
+    const seen = new Set<string>();
+    for (let j = i; j < i + n; j++) {
+      if (wanted.has(logos[j % n].name)) seen.add(logos[j % n].name);
+      if (seen.size === wanted.size) {
+        if (!best || j - i < best[1] - best[0]) best = [i, j];
+        break;
+      }
+    }
+  }
+  if (!best) return null;
+  const kids = track.children as HTMLCollectionOf<HTMLElement>;
+  const left = kids[best[0]].offsetLeft;
+  const right = kids[best[1]].offsetLeft + kids[best[1]].offsetWidth;
+  return (left + right) / 2 - strip.clientWidth / 2;
+}
+
+function LogoCarousel({ activeCity }: { activeCity: string | null }) {
+  const stripRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const activeRef = useRef(activeCity);
+  const pausedRef = useRef(false);
+  activeRef.current = activeCity;
+
+  useEffect(() => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let offset = 0;
+    let last = performance.now();
+    let frame = 0;
+    const step = (now: number) => {
+      const dt = Math.min(now - last, 100);
+      last = now;
+      const strip = stripRef.current;
+      const track = trackRef.current;
+      if (strip && track && !reduceMotion.matches) {
+        const half = track.scrollWidth / 2;
+        const target = activeRef.current ? cityOffset(activeRef.current, track, strip) : null;
+        if (target !== null) {
+          // Ease towards the target along the shorter way round the loop.
+          const diff = ((((target - offset) % half) + half * 1.5) % half) - half / 2;
+          offset += diff * Math.min(1, dt / 150);
+        } else if (!pausedRef.current) {
+          offset += CAROUSEL_SPEED * dt;
+        }
+        offset = ((offset % half) + half) % half;
+        track.style.transform = `translateX(${-offset}px)`;
+      }
+      frame = requestAnimationFrame(step);
+    };
+    frame = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
+  return (
+    <div
+      ref={stripRef}
+      className={activeCity ? 'logo-strip has-active' : 'logo-strip'}
+      role="list"
+      aria-label="Places I have studied and worked"
+      onMouseEnter={() => (pausedRef.current = true)}
+      onMouseLeave={() => (pausedRef.current = false)}
+    >
+      <div ref={trackRef} className="logo-track">
+        {[...logos, ...logos].map((logo, i) => {
+          const dup = i >= logos.length;
+          const classes = ['logo', dup && 'logo-dup', logo.city === activeCity && 'logo-active'];
+          return (
+            <img
+              key={i}
+              className={classes.filter(Boolean).join(' ')}
+              src={logo.src}
+              alt={dup ? '' : logo.name}
+              title={logo.name}
+              style={logo.height ? { height: logo.height } : undefined}
+              role={dup ? 'presentation' : 'listitem'}
+            />
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function TravelMap({ activeCity, onActiveCity }: { activeCity: string | null; onActiveCity: (c: string | null) => void }) {
+  return (
+    <figure className="travel-map">
+      <svg viewBox={`0 0 ${MAP_WIDTH} ${MAP_HEIGHT}`} role="img" aria-labelledby="travel-map-caption">
+        {mapCountries.map((c) => (
+          <path key={c.name} d={c.d} className={c.visited ? 'country visited' : 'country'}>
+            <title>{c.name}</title>
+          </path>
+        ))}
+        {mapCities.map((c) => (
+          <g
+            key={c.name}
+            className={c.name === activeCity ? 'city active' : 'city'}
+            tabIndex={0}
+            onMouseEnter={() => onActiveCity(c.name)}
+            onMouseLeave={() => onActiveCity(null)}
+            onFocus={() => onActiveCity(c.name)}
+            onBlur={() => onActiveCity(null)}
+          >
+            <title>{`${c.name}: ${c.places}`}</title>
+            <circle className="city-hit" cx={c.x} cy={c.y} r={12} />
+            <circle className="city-dot" cx={c.x} cy={c.y} r={4} />
+            <text x={c.x + 7} y={c.y + 4}>
+              {c.name}
+            </text>
+          </g>
+        ))}
+      </svg>
+      <figcaption id="travel-map-caption">Where I have studied and worked</figcaption>
+    </figure>
+  );
+}
 
 type NewsItem = { date: string; text: React.ReactNode };
 
@@ -374,6 +499,7 @@ const Publication = ({ pub }: { pub: Pub }) => {
 
 const App = () => {
   const [hasPhoto, setHasPhoto] = useState(true);
+  const [activeCity, setActiveCity] = useState<string | null>(null);
 
   return (
     <>
@@ -430,44 +556,8 @@ const App = () => {
 
       <main className="container">
         <div className="highlights">
-          <div className="logo-strip" role="list" aria-label="Places I have studied and worked">
-            <div className="logo-track">
-              {[...logos, ...logos].map((logo, i) => {
-                const dup = i >= logos.length;
-                return (
-                  <img
-                    key={i}
-                    className={dup ? 'logo logo-dup' : 'logo'}
-                    src={logo.src}
-                    alt={dup ? '' : logo.name}
-                    title={logo.name}
-                    style={logo.height ? { height: logo.height } : undefined}
-                    role={dup ? 'presentation' : 'listitem'}
-                  />
-                );
-              })}
-            </div>
-          </div>
-
-          <figure className="travel-map">
-            <svg viewBox={`0 0 ${MAP_WIDTH} ${MAP_HEIGHT}`} role="img" aria-labelledby="travel-map-caption">
-              {mapCountries.map((c) => (
-                <path key={c.name} d={c.d} className={c.visited ? 'country visited' : 'country'}>
-                  <title>{c.name}</title>
-                </path>
-              ))}
-              {mapCities.map((c) => (
-                <g key={c.name} className="city">
-                  <title>{`${c.name}: ${c.places}`}</title>
-                  <circle cx={c.x} cy={c.y} r={4} />
-                  <text x={c.x + 7} y={c.y + 4}>
-                    {c.name}
-                  </text>
-                </g>
-              ))}
-            </svg>
-            <figcaption id="travel-map-caption">Where I have studied and worked</figcaption>
-          </figure>
+          <LogoCarousel activeCity={activeCity} />
+          <TravelMap activeCity={activeCity} onActiveCity={setActiveCity} />
         </div>
 
         <section>

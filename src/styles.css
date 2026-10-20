@@ -155,20 +155,18 @@ main section {
 .logo-strip {
   flex: 1;
   min-width: 0;
+  padding: 16px 0;
   overflow: hidden;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
 
 .logo-track {
+  position: relative;
   display: flex;
   align-items: center;
   width: max-content;
-  animation: logo-scroll 35s linear infinite;
-}
-
-.logo-strip:hover .logo-track {
-  animation-play-state: paused;
+  will-change: transform;
 }
 
 .logo {
@@ -178,12 +176,18 @@ main section {
   max-width: 190px;
   margin-right: 72px;
   object-fit: contain;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }
 
-@keyframes logo-scroll {
-  to {
-    transform: translateX(-50%);
-  }
+.has-active .logo {
+  opacity: 0.35;
+}
+
+.has-active .logo.logo-active {
+  opacity: 1;
+  transform: scale(1.3);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -192,7 +196,6 @@ main section {
     flex-wrap: wrap;
     justify-content: center;
     gap: 24px 0;
-    animation: none;
   }
 
   .logo-dup {
@@ -226,10 +229,24 @@ main section {
   fill: #9ec5fe;
 }
 
-.city circle {
+.city {
+  cursor: pointer;
+  outline: none;
+}
+
+.city-hit {
+  fill: transparent;
+}
+
+.city-dot {
   fill: var(--link-color);
   stroke: #fff;
   stroke-width: 1.5;
+  transition: r 0.2s ease;
+}
+
+.city.active .city-dot {
+  r: 6px;
 }
 
 .city text {

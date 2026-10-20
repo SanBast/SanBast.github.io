@@ -142,7 +142,12 @@ const news: NewsItem[] = [
   },
   {
     date: 'Sep 2022',
-    text: 'I joined Amazon Transportation Services (ATS) in Barcelona as an Applied Scientist I Intern.',
+    text: (
+      <>
+        I joined <a href="https://amazon.jobs/content/de/teams/transportation-shipping-logistics">Amazon Transportation Services (ATS)</a> in Barcelona as an Applied Scientist I
+        Intern.
+      </>
+    ),
   },
 ];
 
@@ -392,8 +397,8 @@ const App = () => {
               and <a href="https://www.kcl.ac.uk/people/michela-antonelli">Dr. Michela Antonelli</a> at{' '}
               <a href="https://www.kcl.ac.uk/">King's College London</a>, with funding from{' '}
               <a href="https://3ia.univ-cotedazur.eu/">3IA Côte d'Azur</a>. Before that, I studied at{' '}
-              <a href="https://www.polito.it/">Politecnico di Torino</a>, and worked at Amazon Transportation
-              Services (ATS) in Barcelona, the University of Sheffield, <a href="https://www.lexsa.ai/">LexSA</a> and{' '}
+              <a href="https://www.polito.it/">Politecnico di Torino</a>, and worked at{' '}
+              <a href="https://amazon.jobs/content/de/teams/transportation-shipping-logistics">Amazon Transportation Services (ATS)</a> in Barcelona, the University of Sheffield, <a href="https://www.lexsa.ai/">LexSA</a> and{' '}
               <a href="https://soundberry.ai/en">SoundBerry</a>.
             </p>
             <p>

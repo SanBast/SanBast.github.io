@@ -25,7 +25,7 @@ const ME = 'V. Marcianò';
 const logos: { name: string; src: string; height?: number }[] = [
   { name: 'Politecnico di Torino', src: logoPolito },
   { name: 'Amazon', src: logoAmazon, height: 44 },
-  { name: 'University of Sheffield', src: logoSheffield },
+  { name: 'University of Sheffield', src: logoSheffield, height: 72 },
   { name: 'EURECOM', src: logoEurecom },
   { name: 'Sorbonne Université', src: logoSorbonne },
   { name: "King's College London", src: logoKcl },

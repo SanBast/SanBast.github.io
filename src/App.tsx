@@ -23,7 +23,7 @@ const SCHOLAR = 'https://scholar.google.com/citations?user=Ga_uQ98AAAAJ';
 const ME = 'V. Marcianò';
 
 const logos: { name: string; src: string; height?: number }[] = [
-  { name: 'Politecnico di Torino', src: logoPolito },
+  { name: 'Politecnico di Torino', src: logoPolito, height: 72 },
   { name: 'Amazon', src: logoAmazon, height: 44 },
   { name: 'University of Sheffield', src: logoSheffield, height: 72 },
   { name: 'EURECOM', src: logoEurecom },

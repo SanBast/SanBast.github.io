@@ -273,6 +273,7 @@ const publications: Pub[] = [
     year: 2025,
     kind: 'inproceedings',
     teaser: teaserVesselverse,
+    paper: 'https://papers.miccai.org/miccai-2025/1004-Paper0087.html',
     project: 'https://i-vesseg.github.io/vesselverse/',
     code: 'https://github.com/robustml-eurecom/VesselVerse-Framework',
   },

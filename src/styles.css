@@ -136,8 +136,19 @@ main section {
   padding: 0 0 10px;
 }
 
+.news-year {
+  padding: 14px 0 6px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.news tbody:first-child .news-year {
+  padding-top: 0;
+}
+
 .news-date {
-  min-width: 85px;
+  min-width: 50px;
   padding-right: 12px !important;
   font-weight: 700;
   white-space: nowrap;

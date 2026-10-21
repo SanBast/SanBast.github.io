@@ -32,15 +32,16 @@ const logos: { name: string; src: string; height?: number }[] = [
   { name: 'Amazon Alexa', src: logoAlexa, height: 48 },
 ];
 
-type NewsItem = { date: string; text: React.ReactNode };
+type NewsItem = { date: string; text: React.ReactNode; paper?: boolean };
 
 const news: NewsItem[] = [
   {
     date: 'Oct 2026',
+    paper: true,
     text: (
       <>
         <b>GRACE</b>, our retrieval-augmented correction framework for generalist medical image segmentation, was
-        accepted at Transactions on Machine Learning Research (TMLR)! Code is available{' '}
+        accepted at <b>Transactions on Machine Learning Research (TMLR)</b>! Code is available{' '}
         <a href="https://github.com/robustml-eurecom/grace">here</a>.
       </>
     ),
@@ -60,19 +61,21 @@ const news: NewsItem[] = [
   },
   {
     date: 'Sep 2026',
+    paper: true,
     text: (
       <>
         <a href="https://arxiv.org/abs/2610.17354">MID</a>, our reference-free metric for evaluating medical image segmentation, was accepted at{' '}
-        <a href="https://neurips.cc">NeurIPS 2026</a>!
+        <a href="https://neurips.cc"><b>NeurIPS 2026</b></a>!
       </>
     ),
   },
   {
     date: 'Jul 2026',
+    paper: true,
     text: (
       <>
         <a href="https://robustml-eurecom.github.io/nnQC/">nnQC</a>, our diffusion-based quality control framework
-        for medical image segmentation, was accepted at IEEE Transactions on Medical Imaging (TMI)!
+        for medical image segmentation, was accepted at <b>IEEE Transactions on Medical Imaging (TMI)</b>!
       </>
     ),
   },
@@ -87,9 +90,10 @@ const news: NewsItem[] = [
   },
   {
     date: 'May 2026',
+    paper: true,
     text: (
       <>
-        Our paper on biological pretraining for vascular graph extraction was accepted at MICCAI 2026. Check out
+        Our paper on biological pretraining for vascular graph extraction was accepted at <b>MICCAI 2026</b>. Check out
         the <a href="https://github.com/erc-caravel/Vascular-Graph-Extraction">code</a>.
       </>
     ),
@@ -135,7 +139,13 @@ const news: NewsItem[] = [
   },
   {
     date: 'Mar 2024',
-    text: 'Our paper on discriminating indoor and outdoor environments from magnetic field data was accepted at IEEE Sensors Journal.',
+    paper: true,
+    text: (
+      <>
+        Our paper on discriminating indoor and outdoor environments from magnetic field data was accepted at{' '}
+        <b>IEEE Sensors Journal</b>.
+      </>
+    ),
   },
   {
     date: 'Sep 2023',
@@ -160,6 +170,15 @@ const news: NewsItem[] = [
     ),
   },
 ];
+
+// News grouped by year (news is already newest first).
+const newsByYear = news.reduce<[string, NewsItem[]][]>((groups, item) => {
+  const year = item.date.split(' ')[1];
+  const last = groups[groups.length - 1];
+  if (last && last[0] === year) last[1].push(item);
+  else groups.push([year, [item]]);
+  return groups;
+}, []);
 
 type Pub = {
   key: string;
@@ -461,14 +480,28 @@ const App = () => {
         <section>
           <h3>News</h3>
           <table className="news">
-              <tbody>
-                {news.map((item, i) => (
+            {newsByYear.map(([year, items]) => (
+              <tbody key={year}>
+                <tr>
+                  <th className="news-year" colSpan={2}>
+                    {year}
+                  </th>
+                </tr>
+                {items.map((item, i) => (
                   <tr key={i}>
-                    <td className="news-date">{item.date}</td>
-                    <td>{item.text}</td>
+                    <td className="news-date">{item.date.split(' ')[0]}</td>
+                    <td>
+                      {item.paper && (
+                        <span className="news-emoji" role="img" aria-label="Paper accepted">
+                          🎉📝{' '}
+                        </span>
+                      )}
+                      {item.text}
+                    </td>
                   </tr>
                 ))}
               </tbody>
+            ))}
           </table>
         </section>
 

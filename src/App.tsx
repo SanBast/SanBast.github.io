@@ -36,6 +36,16 @@ type NewsItem = { date: string; text: React.ReactNode };
 
 const news: NewsItem[] = [
   {
+    date: 'Oct 2026',
+    text: (
+      <>
+        <b>GRACE</b>, our retrieval-augmented correction framework for generalist medical image segmentation, was
+        accepted at Transactions on Machine Learning Research (TMLR)! Code is available{' '}
+        <a href="https://github.com/robustml-eurecom/grace">here</a>.
+      </>
+    ),
+  },
+  {
     date: 'Sep 2026',
     text: (
       <>
@@ -217,10 +227,11 @@ const publications: Pub[] = [
     short: 'GRACE',
     title: 'Retrieval-Augmented Correction for Generalist Medical Image Segmentation',
     authors: [ME, 'X. Zhang', 'M. Antonelli', 'S. Ourselin', 'M. A. Zuluaga'],
-    venue: 'Under review at Transactions on Machine Learning Research (TMLR)',
+    venue: 'Transactions on Machine Learning Research (TMLR)',
     year: 2026,
-    kind: 'misc',
+    kind: 'article',
     teaser: teaserGrace,
+    code: 'https://github.com/robustml-eurecom/grace',
   },
   {
     key: 'Viglino2026Condition',

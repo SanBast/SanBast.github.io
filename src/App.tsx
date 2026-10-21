@@ -123,7 +123,15 @@ const news: NewsItem[] = [
   },
   {
     date: 'Sep 2025',
-    text: 'Our work on divergence-aware training for breast tumor segmentation received the Best Paper Award at the Deep Breast Workshop, MICCAI 2025.',
+    text: (
+      <>
+        Our work on{' '}
+        <a href="https://hal.science/hal-05251649v1/file/publi-8347.pdf">
+          divergence-aware training for breast tumor segmentation
+        </a>{' '}
+        received the Best Paper Award at the Deep Breast Workshop, MICCAI 2025.
+      </>
+    ),
   },
   {
     date: 'Feb 2025',
@@ -136,7 +144,12 @@ const news: NewsItem[] = [
   },
   {
     date: 'Oct 2024',
-    text: 'HyperMM received the Best Presentation Award at the MMMI Workshop, MICCAI 2024.',
+    text: (
+      <>
+        <a href="https://arxiv.org/abs/2407.20768">HyperMM</a> received the Best Presentation Award at the MMMI
+        Workshop, MICCAI 2024.
+      </>
+    ),
   },
   {
     date: 'Mar 2024',

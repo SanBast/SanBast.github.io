@@ -199,6 +199,17 @@ type Pub = {
 
 const publications: Pub[] = [
   {
+    key: 'Marciano2026GRACE',
+    short: 'GRACE',
+    title: 'Retrieval-Augmented Correction for Generalist Medical Image Segmentation',
+    authors: [ME, 'X. Zhang', 'M. Antonelli', 'S. Ourselin', 'M. A. Zuluaga'],
+    venue: 'Transactions on Machine Learning Research (TMLR)',
+    year: 2026,
+    kind: 'article',
+    teaser: teaserGrace,
+    code: 'https://github.com/robustml-eurecom/grace',
+  },
+  {
     key: 'Marciano2026MID',
     short: 'MID',
     title: 'MID: Mask-Image Distributional Divergence for Evaluating Medical Image Segmentation',
@@ -242,17 +253,6 @@ const publications: Pub[] = [
     teaser: teaserVascular,
     paper: 'https://www.eurecom.fr/fr/publication/8765',
     code: 'https://github.com/erc-caravel/Vascular-Graph-Extraction',
-  },
-  {
-    key: 'Marciano2026GRACE',
-    short: 'GRACE',
-    title: 'Retrieval-Augmented Correction for Generalist Medical Image Segmentation',
-    authors: [ME, 'X. Zhang', 'M. Antonelli', 'S. Ourselin', 'M. A. Zuluaga'],
-    venue: 'Transactions on Machine Learning Research (TMLR)',
-    year: 2026,
-    kind: 'article',
-    teaser: teaserGrace,
-    code: 'https://github.com/robustml-eurecom/grace',
   },
   {
     key: 'Viglino2026Condition',

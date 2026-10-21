@@ -32,12 +32,12 @@ const logos: { name: string; src: string; height?: number }[] = [
   { name: 'Amazon Alexa', src: logoAlexa, height: 48 },
 ];
 
-type NewsItem = { date: string; text: React.ReactNode; paper?: boolean };
+type NewsItem = { date: string; text: React.ReactNode; emoji?: string };
 
 const news: NewsItem[] = [
   {
     date: 'Oct 2026',
-    paper: true,
+    emoji: '🎉',
     text: (
       <>
         <b>GRACE</b>, our retrieval-augmented correction framework for generalist medical image segmentation, was
@@ -48,6 +48,7 @@ const news: NewsItem[] = [
   },
   {
     date: 'Sep 2026',
+    emoji: '🎓',
     text: (
       <>
         I successfully defended my PhD thesis, <em>Representation Learning for Medical Image Segmentation
@@ -61,7 +62,7 @@ const news: NewsItem[] = [
   },
   {
     date: 'Sep 2026',
-    paper: true,
+    emoji: '🎉',
     text: (
       <>
         <a href="https://arxiv.org/abs/2610.17354">MID</a>, our reference-free metric for evaluating medical image segmentation, was accepted at{' '}
@@ -71,7 +72,7 @@ const news: NewsItem[] = [
   },
   {
     date: 'Jul 2026',
-    paper: true,
+    emoji: '🎉',
     text: (
       <>
         <a href="https://robustml-eurecom.github.io/nnQC/">nnQC</a>, our diffusion-based quality control framework
@@ -90,7 +91,7 @@ const news: NewsItem[] = [
   },
   {
     date: 'May 2026',
-    paper: true,
+    emoji: '🎉',
     text: (
       <>
         Our paper on biological pretraining for vascular graph extraction was accepted at <b>MICCAI 2026</b>. Check out
@@ -139,7 +140,7 @@ const news: NewsItem[] = [
   },
   {
     date: 'Mar 2024',
-    paper: true,
+    emoji: '🎉',
     text: (
       <>
         Our paper on discriminating indoor and outdoor environments from magnetic field data was accepted at{' '}
@@ -158,6 +159,7 @@ const news: NewsItem[] = [
   },
   {
     date: 'Dec 2022',
+    emoji: '🎓',
     text: 'I obtained my MSc in Data Science and Engineering from Politecnico di Torino.',
   },
   {
@@ -491,9 +493,9 @@ const App = () => {
                   <tr key={i}>
                     <td className="news-date">{item.date.split(' ')[0]}</td>
                     <td>
-                      {item.paper && (
-                        <span className="news-emoji" role="img" aria-label="Paper accepted">
-                          🎉📝{' '}
+                      {item.emoji && (
+                        <span className="news-emoji" aria-hidden="true">
+                          {item.emoji}{' '}
                         </span>
                       )}
                       {item.text}

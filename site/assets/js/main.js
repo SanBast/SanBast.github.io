@@ -54,6 +54,24 @@ navLinks.forEach(link => {
 
 
 
+// ---------- Affiliation logos carousel ----------
+
+// loop the logos by appending a hidden copy; with reduced motion they stay a static strip
+const logoMarquee = $('.logo-marquee');
+
+if (logoMarquee && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const strip = $('.logo-strip', logoMarquee);
+  [...strip.children].forEach(item => {
+    const copy = item.cloneNode(true);
+    copy.setAttribute('aria-hidden', 'true');
+    copy.querySelectorAll('a').forEach(a => a.tabIndex = -1);
+    strip.appendChild(copy);
+  });
+  logoMarquee.classList.add('is-running');
+}
+
+
+
 // ---------- Scroll reveal ----------
 
 const reveal = $$('.reveal');

@@ -975,7 +975,8 @@ body.menu-open { overflow: hidden; }
 /* local overrides */
 .logo-band {
   align-self: stretch;
-  margin-top: clamp(36px, 5vw, 48px);
+  /* icons -> logos matches subtitle -> icons (36px + buttons + 36px) */
+  margin-top: calc(120px - clamp(28px, 4vw, 36px));
   padding-top: clamp(28px, 4vw, 36px);
   border-top: 1px solid var(--line-soft);
 }

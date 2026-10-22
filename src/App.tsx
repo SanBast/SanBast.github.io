@@ -10,7 +10,7 @@ import teaserSensors from './assets/teaser-sensors.jpg';
 import teaserVascular from './assets/teaser-vascular.jpg';
 import teaserVesselverse from './assets/teaser-vesselverse.jpg';
 import logoAlexa from './assets/logos/alexa.svg';
-import logoAmazon from './assets/logos/amazon.svg';
+import logoAmazonShipping from './assets/logos/amazon-shipping.svg';
 import logoEurecom from './assets/logos/eurecom.svg';
 import logoKcl from './assets/logos/kcl.svg';
 import logoPolito from './assets/logos/polito.svg';
@@ -24,7 +24,7 @@ const ME = 'V. Marcianò';
 
 const logos: { name: string; src: string; height?: number }[] = [
   { name: 'Politecnico di Torino', src: logoPolito, height: 72 },
-  { name: 'Amazon', src: logoAmazon, height: 44 },
+  { name: 'Amazon Shipping', src: logoAmazonShipping, height: 36 },
   { name: 'University of Sheffield', src: logoSheffield, height: 72 },
   { name: 'EURECOM', src: logoEurecom },
   { name: 'Sorbonne Université', src: logoSorbonne },
@@ -112,7 +112,7 @@ const news: NewsItem[] = [
     date: 'Jan 2026',
     text: (
       <>
-        I joined <a href="https://www.lexsa.ai/">LexSA</a> as a Data &amp; Research Scientist, building agentic
+        I joined <a href="https://rulen.ai/">Rulen</a> as a Data &amp; Research Scientist, building agentic
         retrieval tools over 1.2M legal documents.
       </>
     ),
@@ -166,7 +166,10 @@ const news: NewsItem[] = [
     text: (
       <>
         I started my PhD at Sorbonne Université and EURECOM with funding from{' '}
-        <a href="https://3ia.univ-cotedazur.eu/">3IA Côte d'Azur</a>, jointly with King's College London.
+        <a href="https://3ia.univ-cotedazur.eu/">3IA Côte d'Azur</a>, jointly with King's College London,
+        directed by <a href="https://zuluaga.eurecom.io/">Prof. Maria A. Zuluaga</a>, co-directed by{' '}
+        <a href="https://scholar.google.com/citations?user=SMvz9eEAAAAJ&hl=en">Prof. Sébastien Ourselin</a> and
+        co-supervised by <a href="https://www.kcl.ac.uk/people/michela-antonelli">Dr. Michela Antonelli</a>.
       </>
     ),
   },
@@ -444,7 +447,7 @@ const App = () => {
               <a href="https://www.kcl.ac.uk/">King's College London</a>, with funding from{' '}
               <a href="https://3ia.univ-cotedazur.eu/">3IA Côte d'Azur</a>. Before that, I studied at{' '}
               <a href="https://www.polito.it/">Politecnico di Torino</a>, and worked at{' '}
-              <a href="https://amazon.jobs/content/de/teams/transportation-shipping-logistics">Amazon Transportation Services (ATS)</a> in Barcelona, the University of Sheffield, <a href="https://www.lexsa.ai/">LexSA</a> and{' '}
+              <a href="https://amazon.jobs/content/de/teams/transportation-shipping-logistics">Amazon Transportation Services (ATS)</a> in Barcelona, the University of Sheffield, <a href="https://rulen.ai/">Rulen</a> and{' '}
               <a href="https://soundberry.ai/en">SoundBerry</a>.
             </p>
             <p>

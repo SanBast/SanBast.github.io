@@ -1,18 +1,19 @@
-# Vincenzo Marciano portfolio
+# Vincenzo Marcianò portfolio
 
-Personal research portfolio built with React, TypeScript, and Vite.
+Static personal research website. Design adapted, with permission, from
+[Marco Mistretta's website](https://marcomistretta.github.io/).
 
-## Development
+Everything served lives in `site/`:
+
+- `site/index.html`: all page content (news, publications, experience, contacts)
+- `site/assets/js/main.js`: interactions, plus the BibTeX entries in `bibtexData`
+- `site/assets/css/main.css`: styles (accent colours are the `--accent*` tokens at the top)
+
+## Preview locally
 
 ```sh
-npm ci
-npm run dev
-```
-
-## Production build
-
-```sh
-npm run build
+python3 -m http.server 8000 --directory site
 ```
 
 Pushes to the `source` branch are deployed automatically with GitHub Pages.
+The previous React version is kept on the `react-site` branch.

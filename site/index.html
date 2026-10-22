@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Vincenzo Marcianò, Ph.D.</title>
+  <meta name="description" content="Vincenzo Marcianò – Applied Scientist II Intern at Amazon Alexa AI, PhD in AI from Sorbonne Université and EURECOM. Reliable medical image segmentation, representation learning, generative and retrieval-augmented models.">
+  <meta name="author" content="Vincenzo Marcianò">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+
+  <!-- apply a saved theme before first paint (default: follow the system) -->
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var theme = localStorage.getItem('theme');
+        if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E👻%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+  <symbol id="i-googlescholar" viewBox="0 0 24 24"><path fill="currentColor" d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></g></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></g></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M4 9h16M4 15h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="m6 6 12 12M18 6 6 18"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></g></symbol>
+</svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Global navigation -->
+  <header class="globalnav" data-nav>
+    <nav class="globalnav-inner" aria-label="Main">
+      <a href="#top" class="globalnav-name">Vincenzo Marcianò, Ph.D.</a>
+      <ul class="globalnav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="globalnav-actions">
+        <button class="icon-btn" data-theme-toggle aria-label="Switch between light and dark mode" title="Light / dark">
+          <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" data-menu-toggle aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <svg class="icon icon-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="container hero-inner">
+        <img class="hero-photo" src="./assets/images/photo.jpg" alt="Portrait of Vincenzo Marcianò" width="160" height="160">
+        <p class="eyebrow">Applied Scientist II Intern · Amazon Alexa AI</p>
+        <h1 class="hero-title">Vincenzo Marcianò, Ph.D.</h1>
+        <p class="hero-subtitle">
+          Checking when models are wrong, without ground truth.<br class="hide-sm">
+          PhD in AI from Sorbonne Université and EURECOM.
+        </p>
+        <div class="hero-ctas">
+          <a href="#publications" class="btn btn-primary">View publications</a>
+          <a href="./Vincenzo-Marciano-CV.pdf" class="btn btn-secondary" target="_blank">Download CV</a>
+        </div>
+        <ul class="social-row" aria-label="Profiles">
+          <li><a href="https://scholar.google.com/citations?user=Ga_uQ98AAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg class="icon"><use href="#i-googlescholar"/></svg></a></li>
+          <li><a href="https://github.com/SanBast" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg class="icon"><use href="#i-github"/></svg></a></li>
+          <li><a href="https://www.linkedin.com/in/mrcvcn/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg class="icon"><use href="#i-linkedin"/></svg></a></li>
+          <li><a href="mailto:marcianovincenzomv@gmail.com" aria-label="Email" title="Email"><svg class="icon"><use href="#i-mail"/></svg></a></li>
+        </ul>
+        <ul class="logo-strip" aria-label="Affiliations">
+          <li><a href="https://www.polito.it/" target="_blank" rel="noopener" title="Politecnico di Torino"><img src="./assets/logos/polito.svg" alt="Politecnico di Torino" style="height:52px"></a></li>
+          <li><a href="https://amazon.jobs/content/de/teams/transportation-shipping-logistics" target="_blank" rel="noopener" title="Amazon Shipping"><img src="./assets/logos/amazon-shipping.svg" alt="Amazon Shipping" style="height:30px"></a></li>
+          <li><a href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener" title="University of Sheffield"><img src="./assets/logos/sheffield.svg" alt="University of Sheffield" style="height:52px"></a></li>
+          <li><a href="https://www.eurecom.fr/" target="_blank" rel="noopener" title="EURECOM"><img src="./assets/logos/eurecom.svg" alt="EURECOM" style="height:40px"></a></li>
+          <li><a href="https://www.sorbonne-universite.fr/" target="_blank" rel="noopener" title="Sorbonne Université"><img src="./assets/logos/sorbonne.svg" alt="Sorbonne Université" style="height:40px"></a></li>
+          <li><a href="https://www.kcl.ac.uk/" target="_blank" rel="noopener" title="King's College London"><img src="./assets/logos/kcl.svg" alt="King's College London" style="height:40px"></a></li>
+          <li><a href="https://www.amazon.science/tag/alexa" target="_blank" rel="noopener" title="Amazon Alexa"><img src="./assets/logos/alexa.svg" alt="Amazon Alexa" style="height:34px"></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section section-alt" id="about">
+      <div class="container">
+        <h2 class="section-title reveal">About.</h2>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p class="lead">
+              I'm an <strong>Applied Scientist II Intern at Amazon Alexa AI</strong> in Turin, Italy, working on agentic LLM routing under non-stationarity and adversarial shift.
+            </p>
+            <p>
+              I obtained my PhD in Artificial Intelligence and Computer Science in September 2026 from Sorbonne Université and <a href="https://www.eurecom.fr/" target="_blank" rel="noopener">EURECOM</a>, supervised by <a href="https://zuluaga.eurecom.io/" target="_blank" rel="noopener">Prof. Maria A. Zuluaga</a>, <a href="https://scholar.google.com/citations?user=SMvz9eEAAAAJ&amp;hl=en" target="_blank" rel="noopener">Prof. Sébastien Ourselin</a> and <a href="https://www.kcl.ac.uk/people/michela-antonelli" target="_blank" rel="noopener">Dr. Michela Antonelli</a> at <a href="https://www.kcl.ac.uk/" target="_blank" rel="noopener">King&#39;s College London</a>, with funding from <a href="https://3ia.univ-cotedazur.eu/" target="_blank" rel="noopener">3IA Côte d&#39;Azur</a>. Before that, I studied at <a href="https://www.polito.it/" target="_blank" rel="noopener">Politecnico di Torino</a> and worked at <a href="https://amazon.jobs/content/de/teams/transportation-shipping-logistics" target="_blank" rel="noopener">Amazon Transportation Services (ATS)</a> in Barcelona, the University of Sheffield, <a href="https://rulen.ai/" target="_blank" rel="noopener">Rulen</a> and <a href="https://soundberry.ai/en" target="_blank" rel="noopener">SoundBerry</a>.
+            </p>
+          </div>
+          <ul class="stats reveal">
+            <li class="stat">
+              <span class="stat-value">9</span>
+              <span class="stat-label">papers at NeurIPS, MICCAI, IEEE TMI and TMLR</span>
+            </li>
+            <li class="stat">
+              <span class="stat-value">4</span>
+              <span class="stat-label">first-author papers</span>
+            </li>
+            <li class="stat">
+              <span class="stat-value">2</span>
+              <span class="stat-label">awards at MICCAI workshops</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section class="section" id="research">
+      <div class="container">
+        <h2 class="section-title reveal">Research.</h2>
+        <p class="section-intro reveal">
+          My research asks how <strong>learned representations</strong> can tell a model when it is wrong under <strong>distribution shift</strong>. I work on representation learning, domain generalisation, generative models and retrieval-augmented methods, with a focus on reliable 3D medical image segmentation.
+        </p>
+        <ul class="tiles">
+          <li class="tile reveal">
+            <h3>Quality control without ground truth</h3>
+            <p>Telling a segmentation model when it is wrong, across organs, modalities and unseen datasets.</p>
+          </li>
+          <li class="tile reveal">
+            <h3>Domain generalisation &amp; distribution shift</h3>
+            <p>Representations that stay reliable when the data changes.</p>
+          </li>
+          <li class="tile reveal">
+            <h3>Generative models</h3>
+            <p>Latent diffusion and flow matching to model what a plausible segmentation looks like.</p>
+          </li>
+          <li class="tile reveal">
+            <h3>Retrieval-augmented &amp; foundation models</h3>
+            <p>Moving anatomical knowledge from weights into multimodal knowledge bases.</p>
+          </li>
+          <li class="tile reveal">
+            <h3>3D &amp; volumetric learning</h3>
+            <p>Segmentation of CT, MRI and ultrasound volumes.</p>
+          </li>
+          <li class="tile reveal">
+            <h3>Agentic LLM routing</h3>
+            <p>Robust routing of LLM agents under non-stationarity and adversarial shift.</p>
+          </li>
+        </ul>
+
+        <h3 class="subsection-title reveal" id="news">Latest news</h3>
+        <ol class="news reveal">
+          <li><time>Oct 2026</time><p>🎉 <strong>GRACE</strong>, our retrieval-augmented correction framework for generalist medical image segmentation, was accepted at <strong>TMLR</strong>! Code is available <a href="https://github.com/robustml-eurecom/grace" target="_blank" rel="noopener">here</a>.</p></li>
+          <li><time>Sep 2026</time><p>🎓 I successfully defended my PhD thesis, <em>Representation Learning for Medical Image Segmentation Quality</em>, at Sorbonne Université / EURECOM. Many thanks to my jury: <a href="https://www.imperial.ac.uk/people/w.bai" target="_blank" rel="noopener">Wenjia Bai</a>, <a href="https://people.compute.dtu.dk/afhar/" target="_blank" rel="noopener">Aasa Feragen</a>, <a href="https://bernhard-kainz.com/" target="_blank" rel="noopener">Bernhard Kainz</a> and <a href="https://eferrante.github.io/" target="_blank" rel="noopener">Enzo Ferrante</a>.</p></li>
+          <li><time>Sep 2026</time><p>🎉 <a href="https://arxiv.org/abs/2610.17354" target="_blank" rel="noopener">MID</a>, our reference-free metric for evaluating medical image segmentation, was accepted at <strong>NeurIPS 2026</strong>!</p></li>
+          <li><time>Jul 2026</time><p>🎉 <a href="https://robustml-eurecom.github.io/nnQC/" target="_blank" rel="noopener">nnQC</a>, our diffusion-based quality control framework for medical image segmentation, was accepted at <strong>IEEE Transactions on Medical Imaging (TMI)</strong>!</p></li>
+          <li><time>Jun 2026</time><p>Joined <a href="https://www.amazon.science/tag/alexa" target="_blank" rel="noopener">Amazon Alexa AI</a> in Turin as an Applied Scientist II Intern, working on agentic LLM routing under non-stationarity.</p></li>
+          <li><time>May 2026</time><p>🎉 Our paper on biological pretraining for vascular graph extraction was accepted at <strong>MICCAI 2026</strong>. Check out the <a href="https://github.com/erc-caravel/Vascular-Graph-Extraction" target="_blank" rel="noopener">code</a>.</p></li>
+          <li class="news-more"><time>Feb 2026</time><p>My second talk at the World AI Cannes Festival (WAICF 2026), again on AI for quality control in medical imaging.</p></li>
+          <li class="news-more"><time>Jan 2026</time><p>Joined <a href="https://rulen.ai/" target="_blank" rel="noopener">Rulen</a> as a Data &amp; Research Scientist, building agentic retrieval tools over 1.2M legal documents.</p></li>
+          <li class="news-more"><time>Oct 2025</time><p>Public demo of our AI research for medical imaging at the Fête de la Science in Antibes.</p></li>
+          <li class="news-more"><time>Sep 2025</time><p>Our work on <a href="https://hal.science/hal-05251649v1/file/publi-8347.pdf" target="_blank" rel="noopener">divergence-aware training for breast tumor segmentation</a> received the Best Paper Award at the Deep Breast Workshop, MICCAI 2025.</p></li>
+          <li class="news-more"><time>Feb 2025</time><p>My first talk at the World AI Cannes Festival (WAICF 2025), on AI for quality control in medical imaging.</p></li>
+          <li class="news-more"><time>Oct 2024</time><p><a href="https://arxiv.org/abs/2407.20768" target="_blank" rel="noopener">HyperMM</a> received the Best Presentation Award at the MMMI Workshop, MICCAI 2024.</p></li>
+          <li class="news-more"><time>Mar 2024</time><p>🎉 Our paper on discriminating indoor and outdoor environments from magnetic field data was accepted at <strong>IEEE Sensors Journal</strong>.</p></li>
+          <li class="news-more"><time>Sep 2023</time><p>Started my PhD at Sorbonne Université and EURECOM with funding from <a href="https://3ia.univ-cotedazur.eu/" target="_blank" rel="noopener">3IA Côte d&#39;Azur</a>, jointly with King&#39;s College London, directed by <a href="https://zuluaga.eurecom.io/" target="_blank" rel="noopener">Prof. Maria A. Zuluaga</a>, co-directed by <a href="https://scholar.google.com/citations?user=SMvz9eEAAAAJ&amp;hl=en" target="_blank" rel="noopener">Prof. Sébastien Ourselin</a> and co-supervised by <a href="https://www.kcl.ac.uk/people/michela-antonelli" target="_blank" rel="noopener">Dr. Michela Antonelli</a>.</p></li>
+          <li class="news-more"><time>Dec 2022</time><p>🎓 Obtained my MSc in Data Science and Engineering from Politecnico di Torino.</p></li>
+          <li class="news-more"><time>Sep 2022</time><p>Joined <a href="https://amazon.jobs/content/de/teams/transportation-shipping-logistics" target="_blank" rel="noopener">Amazon Transportation Services (ATS)</a> in Barcelona as an Applied Scientist I Intern.</p></li>
+        </ol>
+        <button class="link-btn" data-news-toggle aria-expanded="false">Show older news</button>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section class="section section-alt" id="publications">
+      <div class="container">
+        <h2 class="section-title reveal">Publications.</h2>
+        <p class="section-intro reveal">
+          Selected papers. The full list is on <a href="https://scholar.google.com/citations?user=Ga_uQ98AAAAJ" target="_blank" rel="noopener">Google Scholar</a>.
+        </p>
+        <div class="segmented reveal" role="group" aria-label="Filter publications">
+          <button class="segment active" data-filter="all" aria-pressed="true">All</button>
+          <button class="segment" data-filter="first" aria-pressed="false">First author</button>
+          <button class="segment" data-filter="2026" aria-pressed="false">2026</button>
+          <button class="segment" data-filter="2025" aria-pressed="false">2025</button>
+          <button class="segment" data-filter="2024" aria-pressed="false">2024</button>
+        </div>
+        <div class="papers">
+          <article class="paper reveal" data-year="2026" data-first>
+            <div class="paper-media">
+              <img src="./assets/paper_teasers/teaser-grace.jpg" alt="GRACE overview" loading="lazy">
+            </div>
+            <div class="paper-body">
+              <p class="paper-venue">TMLR 2026 <span>Journal · First author</span></p>
+              <h3 class="paper-title">Retrieval-Augmented Correction for Generalist Medical Image Segmentation</h3>
+              <p class="paper-authors"><strong>V. Marcianò</strong>, X. Zhang, M. Antonelli, S. Ourselin, M. A. Zuluaga</p>
+              <p class="paper-abstract">Moves anatomical knowledge from model weights into a multimodal knowledge base: a single anatomy-agnostic refiner corrects masks across 10 organs and 18 datasets and generalises zero-shot to unseen organs.</p>
+              <p class="paper-links">
+                <a href="https://github.com/robustml-eurecom/grace" target="_blank" rel="noopener">Code</a>
+                <button data-bibtex="Marciano2026GRACE">BibTeX</button>
+              </p>
+            </div>
+          </article>
+          <article class="paper reveal" data-year="2026" data-first>
+            <a class="paper-media" href="https://arxiv.org/abs/2610.17354" target="_blank" rel="noopener" tabindex="-1">
+              <img src="./assets/paper_teasers/teaser-mid.jpg" alt="MID overview" loading="lazy">
+            </a>
+            <div class="paper-body">
+              <p class="paper-venue">NeurIPS 2026 <span>Main conference · First author</span></p>
+              <h3 class="paper-title"><a href="https://arxiv.org/abs/2610.17354" target="_blank" rel="noopener">MID: Mask-Image Distributional Divergence for Evaluating Medical Image Segmentation</a></h3>
+              <p class="paper-authors"><strong>V. Marcianò</strong>, X. Zhang, G. Guglielmo, M. Antonelli, S. Ourselin, M. A. Zuluaga</p>
+              <p class="paper-abstract">A reference-free, FID-inspired metric comparing joint image–mask distributions in a frozen medical feature space; it ranks segmentation models as Dice does without per-sample labels.</p>
+              <p class="paper-links">
+                <a href="https://arxiv.org/abs/2610.17354" target="_blank" rel="noopener">arXiv</a>
+                <a href="https://github.com/erc-caravel/pytorch-mid" target="_blank" rel="noopener">Code</a>
+                <button data-bibtex="Marciano2026MID">BibTeX</button>
+              </p>
+            </div>
+          </article>
+          <article class="paper reveal" data-year="2026" data-first>
+            <a class="paper-media" href="https://arxiv.org/abs/2511.09588" target="_blank" rel="noopener" tabindex="-1">
+              <img src="./assets/paper_teasers/teaser-nnqc.jpg" alt="nnQC overview" loading="lazy">
+            </a>
+            <div class="paper-body">
+              <p class="paper-venue">IEEE TMI 2026 <span>Journal · First author</span></p>
+              <h3 class="paper-title"><a href="https://arxiv.org/abs/2511.09588" target="_blank" rel="noopener">Diffusion-Based Quality Control of Medical Image Segmentations across Organs</a></h3>
+              <p class="paper-authors"><strong>V. Marcianò</strong>, H. Chaptoukaev, V. Fernandez, M. J. Cardoso, S. Ourselin, M. Antonelli, M. A. Zuluaga</p>
+              <p class="paper-abstract">A self-configuring quality-control framework where a conditional latent diffusion model learns the quality manifold of an organ, evaluated on 15 datasets, 7 organs and 4 imaging techniques.</p>
+              <p class="paper-links">
+                <a href="https://arxiv.org/abs/2511.09588" target="_blank" rel="noopener">arXiv</a>
+                <a href="https://robustml-eurecom.github.io/nnQC/" target="_blank" rel="noopener">Project</a>
+                <a href="https://github.com/robustml-eurecom/nnQC" target="_blank" rel="noopener">Code</a>
+                <button data-bibtex="Marciano2026nnQC">BibTeX</button>
+              </p>
+            </div>
+          </article>
+          <article class="paper reveal" data-year="2026">
+            <a class="paper-media" href="https://www.eurecom.fr/fr/publication/8765" target="_blank" rel="noopener" tabindex="-1">
+              <img src="./assets/paper_teasers/teaser-vascular.jpg" alt="Vascular graph extraction overview" loading="lazy">
+            </a>
+            <div class="paper-body">
+              <p class="paper-venue">MICCAI 2026 <span>Main conference</span></p>
+              <h3 class="paper-title"><a href="https://www.eurecom.fr/fr/publication/8765" target="_blank" rel="noopener">Structural Congruence Matters: Biological Pretraining for Vascular Graph Extraction</a></h3>
+              <p class="paper-authors">A. Scavone, L. Borrego, <strong>V. Marcianò</strong>, C. Mata, B. Giraldo, J. Munuera, M. A. Zuluaga</p>
+              <p class="paper-links">
+                <a href="https://www.eurecom.fr/fr/publication/8765" target="_blank" rel="noopener">Paper</a>
+                <a href="https://github.com/erc-caravel/Vascular-Graph-Extraction" target="_blank" rel="noopener">Code</a>
+                <button data-bibtex="Scavone2026Structural">BibTeX</button>
+              </p>
+            </div>
+          </article>
+          <article class="paper reveal" data-year="2026">
+            <div class="paper-media">
+              <img src="./assets/paper_teasers/teaser-condition.jpg" alt="Missing-aware conditioning overview" loading="lazy">
+            </div>
+            <div class="paper-body">
+              <p class="paper-venue">Preprint 2026</p>
+              <h3 class="paper-title">Condition, Don't Impute: Missing-Aware Conditioning for Incomplete Multimodal Healthcare Data</h3>
+              <p class="paper-authors">M. Viglino, N. V. Barrera, H. Chaptoukaev, M. A. Zuluaga, <strong>V. Marcianò</strong></p>
+              <p class="paper-links">
+                <button data-bibtex="Viglino2026Condition">BibTeX</button>
+              </p>
+            </div>
+          </article>
+          <article class="paper reveal" data-year="2025">
+            <a class="paper-media" href="https://papers.miccai.org/miccai-2025/1004-Paper0087.html" target="_blank" rel="noopener" tabindex="-1">
+              <img src="./assets/paper_teasers/teaser-vesselverse.jpg" alt="VesselVerse overview" loading="lazy">
+            </a>
+            <div class="paper-body">
+              <p class="paper-venue">MICCAI 2025 <span>Main conference</span></p>
+              <h3 class="paper-title"><a href="https://papers.miccai.org/miccai-2025/1004-Paper0087.html" target="_blank" rel="noopener">VesselVerse: A Dataset and Collaborative Framework for Vessel Annotation</a></h3>
+              <p class="paper-authors">D. Falcetta, <strong>V. Marcianò</strong>, K. Yang, J. Cleary, L. Legris, M. D. Rizzaro, I. Pitsiorlas, et al.</p>
+              <p class="paper-links">
+                <a href="https://papers.miccai.org/miccai-2025/1004-Paper0087.html" target="_blank" rel="noopener">Paper</a>
+                <a href="https://i-vesseg.github.io/vesselverse/" target="_blank" rel="noopener">Project</a>
+                <a href="https://github.com/robustml-eurecom/VesselVerse-Framework" target="_blank" rel="noopener">Code</a>
+                <button data-bibtex="Falcetta2025VesselVerse">BibTeX</button>
+              </p>
+            </div>
+          </article>
+          <article class="paper reveal" data-year="2025">
+            <a class="paper-media" href="https://hal.science/hal-05251649v1/file/publi-8347.pdf" target="_blank" rel="noopener" tabindex="-1">
+              <img src="./assets/paper_teasers/teaser-breast.jpg" alt="Divergence-aware training overview" loading="lazy">
+            </a>
+            <div class="paper-body">
+              <p class="paper-venue">MICCAI 2025 Workshop <span>Deep Breast · Best Paper Award</span></p>
+              <h3 class="paper-title"><a href="https://hal.science/hal-05251649v1/file/publi-8347.pdf" target="_blank" rel="noopener">Divergence-Aware Training with Automatic Subgroup Mitigation for Breast Tumor Segmentation</a></h3>
+              <p class="paper-authors">E. Poeta, L. Vargas, D. Falcetta, <strong>V. Marcianò</strong>, E. Pastor, T. Cerquitelli, E. Baralis, M. A. Zuluaga</p>
+              <p class="paper-links">
+                <a href="https://hal.science/hal-05251649v1/file/publi-8347.pdf" target="_blank" rel="noopener">Paper</a>
+                <button data-bibtex="Poeta2025Divergence">BibTeX</button>
+              </p>
+            </div>
+          </article>
+          <article class="paper reveal" data-year="2024">
+            <a class="paper-media" href="https://arxiv.org/abs/2407.20768" target="_blank" rel="noopener" tabindex="-1">
+              <img src="./assets/paper_teasers/teaser-hypermm.jpg" alt="HyperMM overview" loading="lazy">
+            </a>
+            <div class="paper-body">
+              <p class="paper-venue">MICCAI 2024 Workshop <span>MMMI · Best Presentation Award</span></p>
+              <h3 class="paper-title"><a href="https://arxiv.org/abs/2407.20768" target="_blank" rel="noopener">HyperMM: Robust Multimodal Learning with Varying-sized Inputs</a></h3>
+              <p class="paper-authors">H. Chaptoukaev, <strong>V. Marcianò</strong>, F. Galati, M. A. Zuluaga</p>
+              <p class="paper-links">
+                <a href="https://arxiv.org/abs/2407.20768" target="_blank" rel="noopener">arXiv</a>
+                <a href="https://github.com/robustml-eurecom/hyperMM" target="_blank" rel="noopener">Code</a>
+                <button data-bibtex="Chaptoukaev2024HyperMM">BibTeX</button>
+              </p>
+            </div>
+          </article>
+          <article class="paper reveal" data-year="2024" data-first>
+            <a class="paper-media" href="https://ieeexplore.ieee.org/abstract/document/10753431" target="_blank" rel="noopener" tabindex="-1">
+              <img src="./assets/paper_teasers/teaser-sensors.jpg" alt="Indoor / outdoor classification overview" loading="lazy">
+            </a>
+            <div class="paper-body">
+              <p class="paper-venue">IEEE Sensors Journal 2024 <span>Journal · First author</span></p>
+              <h3 class="paper-title"><a href="https://ieeexplore.ieee.org/abstract/document/10753431" target="_blank" rel="noopener">Discriminating Between Indoor and Outdoor Environments During Daily Living Activities Using Local Magnetic Field Characteristics and Machine Learning Techniques</a></h3>
+              <p class="paper-authors"><strong>V. Marcianò</strong>, A. Cereatti, S. Bertuletti, T. Bonci, L. Alcock, E. Gazit, N. Ireson, et al.</p>
+              <p class="paper-abstract">A lightweight ML system based on time–frequency magnetometer features for indoor/outdoor localisation on embedded, wearable devices.</p>
+              <p class="paper-links">
+                <a href="https://ieeexplore.ieee.org/abstract/document/10753431" target="_blank" rel="noopener">Paper</a>
+                <button data-bibtex="Marciano2024Indoor">BibTeX</button>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience">
+      <div class="container">
+        <h2 class="section-title reveal">Experience.</h2>
+        <div class="columns">
+          <div class="reveal">
+            <h3 class="subsection-title">Industry</h3>
+            <ol class="timeline">
+              <li>
+                <p class="timeline-date">Jun 2026 — Present · Turin, Italy</p>
+                <h4>Applied Scientist II Intern, Amazon Alexa AI</h4>
+                <p>Benchmarks that stress-test agentic LLM routing under non-stationarity and adversarial shift, and a multi-armed-bandit router for shifting traffic.</p>
+              </li>
+              <li>
+                <p class="timeline-date">Jan 2026 — May 2026 · Milan, Italy</p>
+                <h4>Data &amp; Research Scientist, <a href="https://rulen.ai/" target="_blank" rel="noopener">Rulen</a></h4>
+                <p>Embedded over 1.2 million public legal documents and built LLM-based agentic tools for fiscal profiling.</p>
+              </li>
+              <li>
+                <p class="timeline-date">Dec 2025 — May 2026 · Milan, Italy</p>
+                <h4>AI Sound Engineer, <a href="https://soundberry.ai/en" target="_blank" rel="noopener">SoundBerry</a></h4>
+                <p>Transformer models for multi-stem music source separation and a hypernetwork-based audio-to-MIDI pipeline.</p>
+              </li>
+              <li>
+                <p class="timeline-date">Sep 2022 — Mar 2023 · Barcelona, Spain</p>
+                <h4>Applied Scientist I Intern, Amazon Transportation Services (ATS)</h4>
+                <p>Time-domain embeddings for multivariate time-series forecasting, reducing WAPE by 30%.</p>
+              </li>
+            </ol>
+          </div>
+          <div class="reveal">
+            <h3 class="subsection-title">Education</h3>
+            <ol class="timeline">
+              <li>
+                <p class="timeline-date">Sep 2023 — Sep 2026</p>
+                <h4>PhD in Artificial Intelligence &amp; Computer Science, Sorbonne Université</h4>
+                <p>Thesis: Representation Learning for Medical Image Segmentation Quality. Advisors: M. A. Zuluaga, S. Ourselin, M. Antonelli.</p>
+              </li>
+              <li>
+                <p class="timeline-date">Oct 2020 — Dec 2022</p>
+                <h4>MSc in Data Science &amp; Engineering, Politecnico di Torino</h4>
+                <p>Thesis on indoor/outdoor recognition from magnetic sensor data, carried out at the University of Sheffield.</p>
+              </li>
+              <li>
+                <p class="timeline-date">Oct 2017 — Jul 2020</p>
+                <h4>BSc in Electronics Engineering, Politecnico di Torino</h4>
+                <p>Thesis on digital filters coded directly on I/O addresses in C/Python.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="columns columns-spaced">
+          <div class="reveal">
+            <h3 class="subsection-title">Research</h3>
+            <ol class="timeline">
+              <li>
+                <p class="timeline-date">Sep 2023 — May 2026 · Biot, France</p>
+                <h4>Researcher, EURECOM AI4Health Lab</h4>
+                <p>Generative, retrieval-augmented and distribution-level methods to assess and correct 3D medical image segmentations without ground truth.</p>
+              </li>
+              <li>
+                <p class="timeline-date">Sep 2023 — Sep 2026 · London, UK</p>
+                <h4>Visiting Researcher, King's College London</h4>
+                <p>School of Biomedical Engineering &amp; Imaging Sciences.</p>
+              </li>
+              <li>
+                <p class="timeline-date">May 2022 — Sep 2022 · Sheffield, UK</p>
+                <h4>Research Scientist Intern, University of Sheffield</h4>
+                <p>Lightweight ML for indoor/outdoor localisation on wearable devices, improving accuracy by 15%.</p>
+              </li>
+            </ol>
+          </div>
+          <div class="reveal">
+            <h3 class="subsection-title">Teaching &amp; service</h3>
+            <ol class="timeline">
+              <li>
+                <p class="timeline-date">2023 — 2026</p>
+                <h4>Teaching Assistant, EURECOM</h4>
+                <p>Machine Learning and Intelligent Systems (MALIS), lab projects for three academic years.</p>
+              </li>
+              <li>
+                <p class="timeline-date">2019 — 2022</p>
+                <h4>Teaching Assistant, Politecnico di Torino</h4>
+                <p>LED Laboratories: Applied Electronics, Biomedical Computer Architectures and Electromagnetic Fields.</p>
+              </li>
+              <li>
+                <h4>Reviewing</h4>
+                <p>Medical Image Analysis (MedIA) · IEEE TMI · MICCAI</p>
+              </li>
+            </ol>
+            <h3 class="subsection-title">Skills</h3>
+            <ul class="chips">
+              <li>Python</li><li>PyTorch</li><li>MONAI</li><li>TorchIO</li><li>HuggingFace</li><li>vLLM</li><li>TensorFlow</li><li>scikit-learn</li><li>C</li><li>C++</li><li>Bash</li><li>Docker</li><li>CUDA</li><li>AWS</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CV -->
+    <section class="section section-alt" id="cv">
+      <div class="container">
+        <div class="cv-card reveal">
+          <div class="cv-copy">
+            <h2 class="section-title">Curriculum vitae.</h2>
+            <p class="section-intro">Everything in one place.</p>
+            <div class="hero-ctas cv-ctas">
+              <a href="./Vincenzo-Marciano-CV.pdf" class="btn btn-primary" download="Vincenzo_Marciano_CV.pdf">
+                <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Download PDF
+              </a>
+              <a href="./Vincenzo-Marciano-CV.pdf" class="btn btn-secondary" target="_blank">Open in browser</a>
+            </div>
+          </div>
+          <a class="cv-pages" href="./Vincenzo-Marciano-CV.pdf" target="_blank" aria-label="Open the CV PDF">
+            <img src="./assets/cv/Vincenzo-Marciano-CV-1.png" alt="CV page 1" loading="lazy">
+            <img src="./assets/cv/Vincenzo-Marciano-CV-2.png" alt="CV page 2" loading="lazy">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beyond research -->
+    <section class="section" id="beyond">
+      <div class="container narrow">
+        <h2 class="section-title reveal">Beyond research.</h2>
+        <p class="section-intro reveal">
+          I'm Head of Tech at <strong>Vision APS</strong>, a non-profit offering scholarships, mentorship and career access to talented students facing social and geographic barriers, and Vice President of <strong>Seele APS</strong>, a cultural association promoting independent festivals in Salento. I'm also a University Ambassador for Nova and a volunteer member of ADMO, the Italian Bone Marrow Donors Association.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <h2 class="section-title reveal">Get in touch.</h2>
+        <p class="section-intro reveal">
+          <svg class="icon inline-icon" aria-hidden="true"><use href="#i-pin"/></svg> Based in Turin, Italy. Email is the best way to reach me.
+        </p>
+        <ul class="contact-grid reveal">
+          <li class="contact-card">
+            <svg class="icon contact-icon" aria-hidden="true"><use href="#i-mail"/></svg>
+            <div class="contact-text">
+              <p class="contact-label">Email</p>
+              <a href="mailto:marcianovincenzomv@gmail.com">marcianovincenzomv@gmail.com</a>
+            </div>
+            <button class="icon-btn" data-copy="marcianovincenzomv@gmail.com" aria-label="Copy email" title="Copy"><svg class="icon"><use href="#i-copy"/></svg></button>
+          </li>
+          <li class="contact-card">
+            <svg class="icon contact-icon" aria-hidden="true"><use href="#i-linkedin"/></svg>
+            <div class="contact-text">
+              <p class="contact-label">LinkedIn</p>
+              <a href="https://www.linkedin.com/in/mrcvcn/" target="_blank" rel="noopener">mrcvcn</a>
+            </div>
+          </li>
+          <li class="contact-card">
+            <svg class="icon contact-icon" aria-hidden="true"><use href="#i-googlescholar"/></svg>
+            <div class="contact-text">
+              <p class="contact-label">Google Scholar</p>
+              <a href="https://scholar.google.com/citations?user=Ga_uQ98AAAAJ" target="_blank" rel="noopener">Vincenzo Marcianò</a>
+            </div>
+          </li>
+          <li class="contact-card">
+            <svg class="icon contact-icon" aria-hidden="true"><use href="#i-github"/></svg>
+            <div class="contact-text">
+              <p class="contact-label">GitHub</p>
+              <a href="https://github.com/SanBast" target="_blank" rel="noopener">SanBast</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© 2026 Vincenzo Marcianò.</p>
+      <nav aria-label="Footer">
+        <a href="#publications">Publications</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- BibTeX dialog -->
+  <dialog class="bibtex-dialog" id="bibtex-dialog" aria-labelledby="bibtex-title">
+    <div class="bibtex-head">
+      <h3 id="bibtex-title">BibTeX</h3>
+      <button class="icon-btn" data-bibtex-close aria-label="Close"><svg class="icon"><use href="#i-close"/></svg></button>
+    </div>
+    <pre id="bibtex-text"></pre>
+    <button class="btn btn-primary" data-bibtex-copy>Copy to clipboard</button>
+  </dialog>
+
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
